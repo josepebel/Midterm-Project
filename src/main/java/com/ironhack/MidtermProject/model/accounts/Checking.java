@@ -8,6 +8,7 @@ import com.ironhack.MidtermProject.model.users.AccountHolder;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;

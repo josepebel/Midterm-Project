@@ -1,13 +1,21 @@
 package com.ironhack.MidtermProject.model.users;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.ironhack.MidtermProject.model.accounts.Account;
 import com.ironhack.MidtermProject.model.supportive.Address;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
-public class AccountHolder extends User{
+@PrimaryKeyJoinColumn(name = "id")
+@DynamicUpdate
+public class AccountHolder extends User {
 
     private LocalDate dateOfBirth;
 
@@ -23,16 +31,24 @@ public class AccountHolder extends User{
     })
     private Address mailingAddress;
 
+    @OneToMany(mappedBy = "primaryOwner")
+    @JsonIgnore
+    private List<Account> primaryAccounts = new ArrayList<>();
+
+    @OneToMany(mappedBy = "secondaryOwner")
+    @JsonIgnore
+    private List<Account> secondaryAccounts = new ArrayList<>();
 
     public AccountHolder() {
     }
 
-
-    public AccountHolder(String username, String password, String name, LocalDate dateOfBirth, Address primaryAddress, Address mailingAddress) {
-        super(username, password, name);
+    public AccountHolder(String username, String password, Set<Role> roles, String name, LocalDate dateOfBirth, Address primaryAddress, Address mailingAddress, List<Account> primaryAccounts, List<Account> secondaryAccounts) {
+        super(username, password, roles, name);
         this.dateOfBirth = dateOfBirth;
         this.primaryAddress = primaryAddress;
         this.mailingAddress = mailingAddress;
+        this.primaryAccounts = primaryAccounts;
+        this.secondaryAccounts = secondaryAccounts;
     }
 
     public LocalDate getDateOfBirth() {
@@ -57,5 +73,21 @@ public class AccountHolder extends User{
 
     public void setMailingAddress(Address mailingAddress) {
         this.mailingAddress = mailingAddress;
+    }
+
+    public List<Account> getPrimaryAccounts() {
+        return primaryAccounts;
+    }
+
+    public void setPrimaryAccounts(List<Account> primaryAccounts) {
+        this.primaryAccounts = primaryAccounts;
+    }
+
+    public List<Account> getSecondaryAccounts() {
+        return secondaryAccounts;
+    }
+
+    public void setSecondaryAccounts(List<Account> secondaryAccounts) {
+        this.secondaryAccounts = secondaryAccounts;
     }
 }

@@ -3,6 +3,7 @@ package com.ironhack.MidtermProject.model.supportive;
 import com.ironhack.MidtermProject.model.accounts.Account;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
