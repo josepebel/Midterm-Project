@@ -83,35 +83,37 @@ Admins can create new accounts. When creating a new account they can create Chec
 Interest and Fees should be applied appropriately 
 - PenaltyFee
 
-The penaltyFee for all accounts should be 40.
-If any account drops below the minimumBalance, the penaltyFee should be deducted from the balance automatically
-InterestRate
+    - The penaltyFee for all accounts should be 40.
+    - If any account drops below the minimumBalance, the penaltyFee should be deducted from the balance automatically
 
-Interest on savings accounts is added to the account annually at the rate of specified interestRate per year. That means that if I have 1000000 in a savings account with a 0.01 interest rate, 1% of 1 Million is added to my account after 1 year. When a savings account balance is accessed, you must determine if it has been 1 year or more since either the account was created or since interest was added to the account, and add the appropriate interest to the balance if necessary.
+- InterestRate
 
-Interest on credit cards is added to the balance monthly. If you have a 12% interest rate (0.12) then 1% interest will be added to the account monthly. When the balance of a credit card is accessed, check to determine if it has been 1 month or more since the account was created or since interested was added, and if so, add the appropriate interest to the balance.
+    - Interest on savings accounts is added to the account annually at the rate of specified interestRate per year. That means that if I have 1000000 in a savings account with a 0.01 interest rate, 1% of 1 Million is added to my account after 1 year. When a savings account balance is accessed, you must determine if it has been 1 year or more since either the account was created or since interest was added to the account, and add the appropriate interest to the balance if necessary.
+
+    - Interest on credit cards is added to the balance monthly. If you have a 12% interest rate (0.12) then 1% interest will be added to the account monthly. When the balance of a credit card is accessed, check to determine if it has been 1 month or more since the account was created or since interested was added, and if so, add the appropriate interest to the balance.
 
 Account Access
-Admins
 
-Admins should be able to access the balance for any account and to modify it.
-AccountHolders
+- Admins
 
-AccountHolders should be able to access their own account balance
-Account holders should be able to transfer money from any of their accounts to any other account (regardless of owner). The transfer should only be processed if the account has sufficient funds. The user must provide the Primary or Secondary owner name and the id of the account that should receive the transfer.
-Third-Party Users
+    - Admins should be able to access the balance for any account and to modify it.
+    
+- AccountHolders
 
-There must be a way for third-party users to receive and send money to other accounts.
-Third-party users must be added to the database by an admin.
-In order to receive and send money, Third-Party Users must provide their hashed key in the header of the HTTP request. They also must provide the amount, the Account id and the account secret key.
+    - AccountHolders should be able to access their own account balance
+    - Account holders should be able to transfer money from any of their accounts to any other account (regardless of owner). The transfer should only be processed if the account has sufficient funds. The user must provide the Primary or Secondary owner name and the id of the account that should receive the transfer.
+
+- Third-Party Users
+
+    - There must be a way for third-party users to receive and send money to other accounts.
+    - Third-party users must be added to the database by an admin.
+    - In order to receive and send money, Third-Party Users must provide their hashed key in the header of the HTTP request. They also must provide the amount, the Account id and the account secret key. 
+      
 Fraud Detection
-The application must recognize patterns that indicate fraud and Freeze the account status when potential fraud is detected.
 
-Patterns that indicate fraud include:
+- The application must recognize patterns that indicate fraud and Freeze the account status when potential fraud is detected.
 
-Transactions made in 24 hours total to more than 150% of the customers highest daily total transactions in any other 24 hour period.
-More than 2 transactions occurring on a single account within a 1 second period.
-Good Practices
-You must include the thorough unit and integration tests.
-You must include robust error handling.
-You must use the Money class for all currency and BigDecimal for any other decimal or large number math.
+- Patterns that indicate fraud include:
+
+    - Transactions made in 24 hours total to more than 150% of the customers highest daily total transactions in any other 24 hour period.
+    - More than 2 transactions occurring on a single account within a 1 second period.
