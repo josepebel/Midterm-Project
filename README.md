@@ -1,6 +1,6 @@
-🏦#Midterm-Project🏦
+# Midterm-Project 🏦
 
-##Requirements
+## Requirements
 
 The system must have 4 types of accounts: StudentChecking, Checking, Savings, and CreditCard.
 
