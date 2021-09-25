@@ -45,7 +45,7 @@ The system must have 4 types of accounts: StudentChecking, Checking, Savings, an
 The system must have 3 types of Users: Admins and AccountHolders.
 AccountHolders
 
-###👤 AccountHolders 
+### 👤 AccountHolders 
 The AccountHolders should be able to access their own accounts and only their accounts when passing the correct credentials using Basic Auth. AccountHolders have:
 
 - A name
@@ -161,6 +161,36 @@ Account Access
 
 #### ⬆ POST
 
+|    Get Method     |             Endpoint               |                          Return                        |
+|-------------------|------------------------------------|--------------------------------------------------------|
+|         1         |             /accounts              |      A list with all account holder's accounts         |
+|         2         |           /account/{id}	           |      An account by Id                                  |
+|         3         |       /verify/accountHolders       |      A list of all account holders                     |
+|         4         |     /verify/accountHolder/{id}     |      An account holder by Id                           |
+|         5         |         /verify/accounts           |      A list of all accounts                            |
+|         6         |        /verify/account/{id}        |      An account by Id                                  |
+|         7         |        /verify/allChecking         |      A list with all checking accounts                 |
+|         8         |     /verify/allStudentChecking     |      A list with all student checking accounts         |
+|         9         |         /verify/allSavings         |      A list with all savings accounts                  |
+|        10         |       /verify/allCreditCard        |      A list with all credit card accounts              |
+|        11         |        /verify/thirdParties        |      A list with all third parties                     |
+|        12         |       /verify/thirdParty/{id}      |      A third party by Id                               |
+
 
 
 #### 🔄 PATCH
+
+|    Get Method     |             Endpoint               |                          Return                        |
+|-------------------|------------------------------------|--------------------------------------------------------|
+|         1         |             /accounts              |      A list with all account holder's accounts         |
+|         2         |           /account/{id}	           |      An account by Id                                  |
+|         3         |       /verify/accountHolders       |      A list of all account holders                     |
+|         4         |     /verify/accountHolder/{id}     |      An account holder by Id                           |
+|         5         |         /verify/accounts           |      A list of all accounts                            |
+|         6         |        /verify/account/{id}        |      An account by Id                                  |
+|         7         |        /verify/allChecking         |      A list with all checking accounts                 |
+|         8         |     /verify/allStudentChecking     |      A list with all student checking accounts         |
+|         9         |         /verify/allSavings         |      A list with all savings accounts                  |
+|        10         |       /verify/allCreditCard        |      A list with all credit card accounts              |
+|        11         |        /verify/thirdParties        |      A list with all third parties                     |
+|        12         |       /verify/thirdParty/{id}      |      A third party by Id                               |
