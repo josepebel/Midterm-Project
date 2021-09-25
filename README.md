@@ -122,7 +122,7 @@ Account Access
 
 ## ▶ Run the project 
 
-### Project installation
+### 🛠 Project installation
 
 1. git clone https://github.com/josepebel/Midterm-Project.git in a folder
 2. Create databases: Go to src/main/resources and use Midterm.sql in your MySQL Workbench 
@@ -142,12 +142,12 @@ Account Access
    
 3. Use postman in order to use the following endpoints
 
-#### GET
+#### ⬇ GET
 
 |    Get Method     |             Endpoint               |                          Return                        |
 |-------------------|------------------------------------|--------------------------------------------------------|
 |         1         |             /accounts              |      A list with all account holder's accounts         |
-|         2         |           /account/{id}	         |      An account by Id                                  |
+|         2         |           /account/{id}	           |      An account by Id                                  |
 |         3         |       /verify/accountHolders       |      A list of all account holders                     |
 |         4         |     /verify/accountHolder/{id}     |      An account holder by Id                           |
 |         5         |         /verify/accounts           |      A list of all accounts                            |
@@ -159,8 +159,8 @@ Account Access
 |        11         |        /verify/thirdParties        |      A list with all third parties                     |
 |        12         |       /verify/thirdParty/{id}      |      A third party by Id                               |
 
-#### POST
+#### ⬆ POST
 
 
 
-#### PATCH
+#### 🔄 PATCH
