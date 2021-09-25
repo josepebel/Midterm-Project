@@ -49,12 +49,12 @@ public class AdminController implements IAdminController {
     @Autowired
     private CreditCardRepository creditCardRepository;
 
-    @GetMapping("/check/accountHolders")
+    @GetMapping("/verify/accountHolders")
     public List<AccountHolder> findAccountHolders() {
         return accountHolderRepository.findAll();
     }
 
-    @GetMapping("/check/accountHolder/{id}")
+    @GetMapping("/verify/accountHolder/{id}")
     public Optional<AccountHolder> findAccountHoldersById(@PathVariable Long id) {
         if(!accountHolderRepository.existsById(id)){
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "AccountHolder not found");
@@ -62,32 +62,32 @@ public class AdminController implements IAdminController {
         return accountHolderRepository.findById(id);
     }
 
-    @GetMapping("/check/accounts")
+    @GetMapping("/verify/accounts")
     public List<Account> findAccounts() {
         return accountRepository.findAll();
     }
 
-    @GetMapping("/check/account/{id}")
+    @GetMapping("/verify/account/{id}")
     public Optional<Account> findAccountById(@PathVariable Long id) {
         return accountRepository.findById(id);
     }
 
-    @GetMapping("/check/allChecking")
+    @GetMapping("/verify/allChecking")
     public List<Checking> findAllChecking() {
         return checkingRepository.findAll();
     }
 
-    @GetMapping("/check/allStudentChecking")
+    @GetMapping("/verify/allStudentChecking")
     public List<StudentChecking> findAllStudentChecking() {
         return studentCheckingRepository.findAll();
     }
 
-    @GetMapping("/check/allSavings")
+    @GetMapping("/verify/allSavings")
     public List<Savings> findAllSavings() {
         return savingsRepository.findAll();
     }
 
-    @GetMapping("/check/allCreditCard")
+    @GetMapping("/verify/allCreditCard")
     public List<CreditCard> findAllCreditCard() {
         return creditCardRepository.findAll();
     }

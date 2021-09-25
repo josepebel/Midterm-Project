@@ -159,28 +159,28 @@ class AdminControllerTest {
 
     @Test
     void findAccountHolders_basicAuth_accountList() throws Exception {
-        MvcResult result = mockMvc.perform(get("/check/accountHolders").with(SecurityMockMvcRequestPostProcessors.
+        MvcResult result = mockMvc.perform(get("/verify/accountHolders").with(SecurityMockMvcRequestPostProcessors.
                 httpBasic("admin1", "admin1"))).andReturn();
         assertTrue(result.getResponse().getContentAsString().contains("Elisa"));
     }
 
     @Test
     void findAccountHoldersById_basicAuthAndId_account() throws Exception {
-        MvcResult result = mockMvc.perform(get("/check/accountHolder/" + accountHolderRepository.findAll().get(0).getId()).with(SecurityMockMvcRequestPostProcessors.
+        MvcResult result = mockMvc.perform(get("/verify/accountHolder/" + accountHolderRepository.findAll().get(0).getId()).with(SecurityMockMvcRequestPostProcessors.
                 httpBasic("admin1", "admin1"))).andReturn();
         assertTrue(result.getResponse().getContentAsString().contains("Elisa"));
     }
 
     @Test
     void findAccounts_basicAuthAdmin_accountsList() throws Exception {
-        MvcResult result = mockMvc.perform(get("/check/accounts").with(SecurityMockMvcRequestPostProcessors.
+        MvcResult result = mockMvc.perform(get("/verify/accounts").with(SecurityMockMvcRequestPostProcessors.
                 httpBasic("admin1", "admin1"))).andReturn();
         assertTrue(result.getResponse().getContentAsString().contains("246810"));
     }
 
     @Test
     void findAccountsById_basicAuthAdminAndAccountId_account() throws Exception {
-        MvcResult result = mockMvc.perform(get("/check/account/" + accountRepository.findAll().get(0).getId()).with(SecurityMockMvcRequestPostProcessors.
+        MvcResult result = mockMvc.perform(get("/verify/account/" + accountRepository.findAll().get(0).getId()).with(SecurityMockMvcRequestPostProcessors.
                 httpBasic("admin1", "admin1"))).andReturn();
         assertTrue(result.getResponse().getContentAsString().contains("1478"));
     }
@@ -188,28 +188,28 @@ class AdminControllerTest {
 
     @Test
     void findAllChecking_basicAuthAdminAndAccountId_allCheckingAccounts() throws Exception {
-        MvcResult result = mockMvc.perform(get("/check/allChecking").with(SecurityMockMvcRequestPostProcessors.
+        MvcResult result = mockMvc.perform(get("/verify/allChecking").with(SecurityMockMvcRequestPostProcessors.
                 httpBasic("admin1", "admin1"))).andReturn();
         assertTrue(result.getResponse().getContentAsString().contains("6200"));
     }
 
     @Test
     void findAllStudentChecking_basicAuthAdminAndAccountId_allStudentCheckingAccounts() throws Exception {
-        MvcResult result = mockMvc.perform(get("/check/allStudentChecking").with(SecurityMockMvcRequestPostProcessors.
+        MvcResult result = mockMvc.perform(get("/verify/allStudentChecking").with(SecurityMockMvcRequestPostProcessors.
                 httpBasic("admin1", "admin1"))).andReturn();
         assertTrue(result.getResponse().getContentAsString().contains("4444"));
     }
 
     @Test
     void findAllSavings_basicAuthAdminAndAccountId_allSavingsAccounts() throws Exception {
-        MvcResult result = mockMvc.perform(get("/check/allSavings").with(SecurityMockMvcRequestPostProcessors.
+        MvcResult result = mockMvc.perform(get("/verify/allSavings").with(SecurityMockMvcRequestPostProcessors.
                 httpBasic("admin1", "admin1"))).andReturn();
         assertTrue(result.getResponse().getContentAsString().contains("4800"));
     }
 
     @Test
     void findAllCreditCard_basicAuthAdminAndAccountId_allCreditCardAccounts() throws Exception {
-        MvcResult result = mockMvc.perform(get("/check/allCreditCard").with(SecurityMockMvcRequestPostProcessors.
+        MvcResult result = mockMvc.perform(get("/verify/allCreditCard").with(SecurityMockMvcRequestPostProcessors.
                 httpBasic("admin1", "admin1"))).andReturn();
         assertTrue(result.getResponse().getContentAsString().contains("3400"));
     }

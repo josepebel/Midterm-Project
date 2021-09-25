@@ -121,3 +121,46 @@ Account Access
     - More than 2 transactions occurring on a single account within a 1 second period.
 
 ## ▶ Run the project 
+
+### Project installation
+
+1. git clone https://github.com/josepebel/Midterm-Project.git in a folder
+2. Create databases: Go to src/main/resources and use Midterm.sql in your MySQL Workbench 
+   1. Execute the following lines of the Midterm.sql script in order to use the application
+
+            DROP SCHEMA IF EXISTS midterm;
+            CREATE SCHEMA midterm;
+            USE midterm;
+
+   2. Execute the following lines of the Midterm.sql script in order to test the junit test
+
+            DROP SCHEMA IF EXISTS midterm_test;
+            CREATE SCHEMA midterm_test;
+            USE midterm_test;
+      
+    ** It's not necessary create tables in sql because the hibernate method is update, so you only need introduce data. In Midterm.sql script there are some values to insert in the different tables of the banking system.
+   
+3. Use postman in order to use the following endpoints
+
+#### GET
+
+|    Get Method     |             Endpoint               |                          Return                        |
+|-------------------|------------------------------------|--------------------------------------------------------|
+|         1         |             /accounts              |      A list with all account holder's accounts         |
+|         2         |           /account/{id}	         |      An account by Id                                  |
+|         3         |       /verify/accountHolders       |      A list of all account holders                     |
+|         4         |     /verify/accountHolder/{id}     |      An account holder by Id                           |
+|         5         |         /verify/accounts           |      A list of all accounts                            |
+|         6         |        /verify/account/{id}        |      An account by Id                                  |
+|         7         |        /verify/allChecking         |      A list with all checking accounts                 |
+|         8         |     /verify/allStudentChecking     |      A list with all student checking accounts         |
+|         9         |         /verify/allSavings         |      A list with all savings accounts                  |
+|        10         |       /verify/allCreditCard        |      A list with all credit card accounts              |
+|        11         |        /verify/thirdParties        |      A list with all third parties                     |
+|        12         |       /verify/thirdParty/{id}      |      A third party by Id                               |
+
+#### POST
+
+
+
+#### PATCH
