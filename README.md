@@ -147,7 +147,7 @@ Account Access
 |    Get Method     |             Endpoint               |                          Return                        |
 |-------------------|------------------------------------|--------------------------------------------------------|
 |         1         |             /accounts              |      A list with all account holder's accounts         |
-|         2         |           /account/{id}	           |      An account by Id                                  |
+|         2         |           /account/{id}	         |      An account by Id                                  |
 |         3         |       /verify/accountHolders       |      A list of all account holders                     |
 |         4         |     /verify/accountHolder/{id}     |      An account holder by Id                           |
 |         5         |         /verify/accounts           |      A list of all accounts                            |
@@ -158,39 +158,35 @@ Account Access
 |        10         |       /verify/allCreditCard        |      A list with all credit card accounts              |
 |        11         |        /verify/thirdParties        |      A list with all third parties                     |
 |        12         |       /verify/thirdParty/{id}      |      A third party by Id                               |
+
+Credentials for Get Method 1-2
+USERNAME: username1 PASSWORD: password 
+
+Credentials for Get Method 3-12
+USERNAME: admin1 PASSWORD: admin1
 
 #### ⬆ POST
 
-|    Get Method     |             Endpoint               |                          Return                        |
-|-------------------|------------------------------------|--------------------------------------------------------|
-|         1         |             /accounts              |      A list with all account holder's accounts         |
-|         2         |           /account/{id}	           |      An account by Id                                  |
-|         3         |       /verify/accountHolders       |      A list of all account holders                     |
-|         4         |     /verify/accountHolder/{id}     |      An account holder by Id                           |
-|         5         |         /verify/accounts           |      A list of all accounts                            |
-|         6         |        /verify/account/{id}        |      An account by Id                                  |
-|         7         |        /verify/allChecking         |      A list with all checking accounts                 |
-|         8         |     /verify/allStudentChecking     |      A list with all student checking accounts         |
-|         9         |         /verify/allSavings         |      A list with all savings accounts                  |
-|        10         |       /verify/allCreditCard        |      A list with all credit card accounts              |
-|        11         |        /verify/thirdParties        |      A list with all third parties                     |
-|        12         |       /verify/thirdParty/{id}      |      A third party by Id                               |
+|    Post Method     |             Endpoint               |                          Return                        |
+|-------------------|-------------------------------------|--------------------------------------------------------|
+|         1         |          /create/savings            |      Create a savings account                          |
+|         2         |        /create/creditcard	          |      Create a credit card account                      |
+|         3         |         /create/checking            |      Create a checking account                         |
+|         4         |       /create/accountHolder         |      Create an account holder                          |
+|         5         |        /create/thirdParty           |      Create a third party                              |
+|         6         |          /transaction               |      Create a transaction                              |
 
+Credentials for Get Method 1-6
+USERNAME: admin1 PASSWORD: admin1
 
 
 #### 🔄 PATCH
 
-|    Get Method     |             Endpoint               |                          Return                        |
-|-------------------|------------------------------------|--------------------------------------------------------|
-|         1         |             /accounts              |      A list with all account holder's accounts         |
-|         2         |           /account/{id}	           |      An account by Id                                  |
-|         3         |       /verify/accountHolders       |      A list of all account holders                     |
-|         4         |     /verify/accountHolder/{id}     |      An account holder by Id                           |
-|         5         |         /verify/accounts           |      A list of all accounts                            |
-|         6         |        /verify/account/{id}        |      An account by Id                                  |
-|         7         |        /verify/allChecking         |      A list with all checking accounts                 |
-|         8         |     /verify/allStudentChecking     |      A list with all student checking accounts         |
-|         9         |         /verify/allSavings         |      A list with all savings accounts                  |
-|        10         |       /verify/allCreditCard        |      A list with all credit card accounts              |
-|        11         |        /verify/thirdParties        |      A list with all third parties                     |
-|        12         |       /verify/thirdParty/{id}      |      A third party by Id                               |
+|    Patch Method   |                   Endpoint                        |                              Return                               |
+|-------------------|---------------------------------------------------|-------------------------------------------------------------------|
+|         1         |            /update/changeStatus/{id}              |      Update the status of an account                              |
+|         2         |              /update/balance/{id}	                |      Update the balance of an account                             |
+|         3         |    /thirdPartyOperation?hashedKey={hashedKey}     |      Make a third party operation and update balance account      |
+
+Credentials for Get Method 1-2
+USERNAME: admin1 PASSWORD: admin1
